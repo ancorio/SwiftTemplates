@@ -10,7 +10,7 @@ class BaseRepositoryCache<RepositoryType: CacheableRepository> {
     
     var repository: RepositoryType
     
-    var cache = [AnyHashable: RepositoryType.ObjectType]()
+    var cache = [RepositoryType.KeyType: RepositoryType.ObjectType]()
     
     init(repository: RepositoryType) {
         self.repository = repository
