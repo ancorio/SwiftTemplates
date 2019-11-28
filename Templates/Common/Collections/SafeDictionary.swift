@@ -1,14 +1,17 @@
 //
-//  Cache.swift
+//  SafeDictionary.swift
 //  Templates
 //
 //  Created by Igor Shavlovsky on 11/28/19.
 //  Copyright © 2019 Igor Shavlovsky. All rights reserved.
 //
 
-protocol Cache {
-    associatedtype KeyType: Hashable
-    associatedtype ObjectType
-    func getObject(_ key: KeyType) -> ObjectType?
-}
+import UIKit
 
+protocol SafeDictionary {
+    associatedtype KeyType: Hashable
+    associatedtype ValueType
+    
+    func access(block: ( inout [KeyType:ValueType])->())
+    
+}
