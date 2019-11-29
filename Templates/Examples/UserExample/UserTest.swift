@@ -11,7 +11,7 @@ import Foundation
 class UserTest {
     
     func test() {
-        var repo = BaseRepositoryCache(repository: UserRepository())
+        var repo = BaseRepositoryCache(repository: UserByIdRepository())
         print(repo.getObject(UserDatabase.user1Id))
         print(repo.getObject(UserDatabase.user2Id))
         print(repo.getObject(UserDatabase.user1Id) === repo.getObject(UserDatabase.user1Id))

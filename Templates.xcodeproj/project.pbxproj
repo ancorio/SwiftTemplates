@@ -18,7 +18,7 @@
 		F871D8DC238FF02C007593B1 /* CacheableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8DB238FF02C007593B1 /* CacheableRepository.swift */; };
 		F871D8E0238FF089007593B1 /* BaseRepositoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8DF238FF089007593B1 /* BaseRepositoryCache.swift */; };
 		F871D8E5238FF12C007593B1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8E4238FF12C007593B1 /* UserModel.swift */; };
-		F871D8E7238FF159007593B1 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8E6238FF159007593B1 /* UserRepository.swift */; };
+		F871D8E7238FF159007593B1 /* UserByIdRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8E6238FF159007593B1 /* UserByIdRepository.swift */; };
 		F871D8E9238FF24D007593B1 /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8E8238FF24D007593B1 /* UserDatabase.swift */; };
 		F871D8EB238FF5EF007593B1 /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8EA238FF5EF007593B1 /* UserTest.swift */; };
 		F871D8EE238FF806007593B1 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8ED238FF806007593B1 /* Cache.swift */; };
@@ -69,7 +69,7 @@
 		F871D8DB238FF02C007593B1 /* CacheableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheableRepository.swift; sourceTree = "<group>"; };
 		F871D8DF238FF089007593B1 /* BaseRepositoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepositoryCache.swift; sourceTree = "<group>"; };
 		F871D8E4238FF12C007593B1 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		F871D8E6238FF159007593B1 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		F871D8E6238FF159007593B1 /* UserByIdRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserByIdRepository.swift; sourceTree = "<group>"; };
 		F871D8E8238FF24D007593B1 /* UserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabase.swift; sourceTree = "<group>"; };
 		F871D8EA238FF5EF007593B1 /* UserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
 		F871D8ED238FF806007593B1 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				F871D8E4238FF12C007593B1 /* UserModel.swift */,
-				F871D8E6238FF159007593B1 /* UserRepository.swift */,
+				F871D8E6238FF159007593B1 /* UserByIdRepository.swift */,
 				F871D8E8238FF24D007593B1 /* UserDatabase.swift */,
 				F871D8EA238FF5EF007593B1 /* UserTest.swift */,
 			);
@@ -406,7 +406,7 @@
 				F871D8A8238FEFE5007593B1 /* AppDelegate.swift in Sources */,
 				F871D9062390126E007593B1 /* ValueAccessStrategy.swift in Sources */,
 				F871D8F123900718007593B1 /* PreloadableCache.swift in Sources */,
-				F871D8E7238FF159007593B1 /* UserRepository.swift in Sources */,
+				F871D8E7238FF159007593B1 /* UserByIdRepository.swift in Sources */,
 				F871D8B0238FEFE5007593B1 /* Templates.xcdatamodeld in Sources */,
 				F8BE102C2391135F005E4500 /* AccessedValue.swift in Sources */,
 				F8BE103823911CA2005E4500 /* DispatchQueueInvocationStrategy.swift in Sources */,

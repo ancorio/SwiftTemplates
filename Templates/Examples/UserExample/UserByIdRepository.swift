@@ -1,5 +1,5 @@
 //
-//  UserRepository.swift
+//  UserByIdRepository.swift
 //  Templates
 //
 //  Created by Igor Shavlovsky on 11/28/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserRepository: CacheableRepository {
+class UserByIdRepository: CacheableRepository {
     
     func debug(map dbUser: UserDBModel, into model: UserModel) {
         model.id = dbUser.id
