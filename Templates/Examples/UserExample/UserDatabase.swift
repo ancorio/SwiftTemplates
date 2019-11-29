@@ -43,7 +43,7 @@ class UserDatabase {
         UserDBModel(id: UserDatabase.user5Id, email: "user5@mail.com")
     ]
     
-    func getUsers(ids: Set<UserDBModel.IdType>) -> [UserDBModel] {
+    func getUsers<C: Collection>(ids: C) -> [UserDBModel] where C.Element == UserDBModel.IdType {
         return debugUsers.filter { (user) -> Bool in
             if let id = user.id {
                 return ids.contains(id)
@@ -53,7 +53,7 @@ class UserDatabase {
         }
     }
     
-    func getUsers(emails: Set<UserDBModel.EmailType>) -> [UserDBModel] {
+    func getUsers<C: Collection>(emails: C) -> [UserDBModel] where C.Element == UserDBModel.EmailType {
         return debugUsers.filter { (user) -> Bool in
             if let email = user.email {
                 return emails.contains(email)

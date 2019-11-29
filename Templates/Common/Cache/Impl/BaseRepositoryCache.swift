@@ -29,28 +29,27 @@ class BaseRepositoryCache<RepositoryType: Repository> {
 
 
 extension BaseRepositoryCache: RepositoryCache {
+    func preloadObjects<C>(_ keys: C) where C : Collection, RepositoryType.KeyType == C.Element {
+        cache.access { (dict) in
+            repository.loadObjects(keys).enumerated().forEach { (offset, element) in
+                dict[element.key] = element.value
+            }
+        }
+    }
+    
     
     func getObject(_ key: RepositoryType.KeyType) -> RepositoryType.ObjectType? {
         return cache.access { (dict) -> RepositoryType.ObjectType? in
             if let obj = dict[key] {
                 return obj
             } else {
-                if let obj = repository.loadObjects(Set([key]))[key] {
+                if let obj = repository.loadObjects([key])[key] {
                     dict[key] = obj
                     return obj
                 }
             }
             return nil
         }
-    }
-    
-    func preloadObjects(_ keys: Set<RepositoryType.KeyType>) { //PreloadStrategy?
-        cache.access { (dict) in
-            repository.loadObjects(keys).enumerated().forEach { (offset, element) in
-                dict[element.key] = element.value
-            }
-        }
-        
     }
     
 }

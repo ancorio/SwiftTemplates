@@ -9,5 +9,5 @@
 protocol Repository {
     associatedtype KeyType: Hashable
     associatedtype ObjectType
-    func loadObjects(_ keys: Set<KeyType>) -> [KeyType : ObjectType]
+    func loadObjects<C: Collection>(_ keys: C ) -> [KeyType : ObjectType] where C.Element == KeyType
 }

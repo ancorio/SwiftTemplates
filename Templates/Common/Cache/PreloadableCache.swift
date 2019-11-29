@@ -6,8 +6,8 @@
 //  Copyright © 2019 Igor Shavlovsky. All rights reserved.
 //
 
-#warning("How to use generic Collection or Sequence as keys type?")
+
 
 protocol PreloadableCache: Cache {
-    func preloadObjects(_ keys: Set<KeyType>)
+    func preloadObjects<C: Collection>(_ keys: C ) where C.Element == KeyType
 }

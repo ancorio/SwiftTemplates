@@ -10,12 +10,7 @@ import Foundation
 
 class UserByIdRepository: Repository {
     
-    func debug(map dbUser: UserDBModel, into model: UserModel) {
-        model.id = dbUser.id
-        model.email = dbUser.email
-    }
-    
-    func loadObjects(_ keys: Set<UUID>) -> [UUID : UserModel] {
+    func loadObjects<C>(_ keys: C) -> [UUID : UserModel] where C : Collection, UUID == C.Element {
         return UserDatabase().getUsers(ids: keys).reduce(into: [UUID : UserModel]()) { (result, dbUser) in
             let model = UserModel()
             debug(map: dbUser, into: model)
@@ -23,5 +18,10 @@ class UserByIdRepository: Repository {
                 result[id] = model
             }
         }
+    }
+    
+    func debug(map dbUser: UserDBModel, into model: UserModel) {
+        model.id = dbUser.id
+        model.email = dbUser.email
     }
 }
