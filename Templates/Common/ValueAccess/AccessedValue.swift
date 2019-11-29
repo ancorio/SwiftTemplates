@@ -8,17 +8,17 @@
 
 import UIKit
 
-class AccessedValue<T> {
+struct AccessedValue<T> {
 
-    var value: T
+    private var value: T
     var accessStrategy: ValueAccessStrategy
     
-    init(value: T, accessStrategy: ValueAccessStrategy) {
+    init(value: T, accessStrategy: ValueAccessStrategy = BaseValueAccessStrategy()) {
         self.value = value
         self.accessStrategy = accessStrategy
     }
-    
-    func access<ReturnType>(_ block: (inout T) -> (ReturnType)) -> ReturnType {
+
+    mutating func access<ReturnType>(_ block: (inout T) -> (ReturnType)) -> ReturnType {
         return accessStrategy.access(&value, block: block)
     }
     

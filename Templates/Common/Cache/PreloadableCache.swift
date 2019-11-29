@@ -6,8 +6,6 @@
 //  Copyright © 2019 Igor Shavlovsky. All rights reserved.
 //
 
-
-
 protocol PreloadableCache: Cache {
     func preloadObjects<C: Collection>(_ keys: C ) where C.Element == KeyType
 }

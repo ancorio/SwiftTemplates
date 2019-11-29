@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseValueAccessStrategy: ValueAccessStrategy {
+struct BaseValueAccessStrategy: ValueAccessStrategy {
 
     func access<ObjectType, ReturnType>(_ object: inout ObjectType, block: (inout ObjectType) -> (ReturnType)) -> ReturnType {
         return block(&object)

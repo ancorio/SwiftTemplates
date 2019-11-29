@@ -34,13 +34,20 @@ class UserDatabase {
     static let user3Id = UUID()
     static let user4Id = UUID()
     static let user5Id = UUID()
+    static let user1Email = "user1@mail.com"
+    static let user2Email = "user2@mail.com"
+    static let user3Email = "user3@mail.com"
+    static let user4Email = "user4@mail.com"
+    static let user5Email = "user5@mail.com"
+    
+    
     
     private var debugUsers = [
-        UserDBModel(id: UserDatabase.user1Id, email: "user1@mail.com"),
-        UserDBModel(id: UserDatabase.user2Id, email: "user2@mail.com"),
-        UserDBModel(id: UserDatabase.user3Id, email: "user3@mail.com"),
-        UserDBModel(id: UserDatabase.user4Id, email: "user4@mail.com"),
-        UserDBModel(id: UserDatabase.user5Id, email: "user5@mail.com")
+        UserDBModel(id: UserDatabase.user1Id, email: user1Email),
+        UserDBModel(id: UserDatabase.user2Id, email: user2Email),
+        UserDBModel(id: UserDatabase.user3Id, email: user3Email),
+        UserDBModel(id: UserDatabase.user4Id, email: user4Email),
+        UserDBModel(id: UserDatabase.user5Id, email: user5Email)
     ]
     
     func getUsers<C: Collection>(ids: C) -> [UserDBModel] where C.Element == UserDBModel.IdType {
