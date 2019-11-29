@@ -1,5 +1,5 @@
 //
-//  SynchronizedAccessStrategy.swift
+//  SynchronizedValueAccessStrategy.swift
 //  Templates
 //
 //  Created by Igor Shavlovsky on 11/28/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SynchronizedAccessStrategy: AccessStrategy {
+class SynchronizedValueAccessStrategy: ValueAccessStrategy {
 
     let lock = NSLock()
     

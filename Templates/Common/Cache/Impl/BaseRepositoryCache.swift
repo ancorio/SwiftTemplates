@@ -16,10 +16,10 @@ class BaseRepositoryCache<RepositoryType: CacheableRepository> {
     private var cache: AccessedValue<[RepositoryType.KeyType: RepositoryType.ObjectType]>
     
     convenience init(repository: RepositoryType) {
-        self.init(repository: repository, accessStrategy: BaseAccessStrategy())
+        self.init(repository: repository, accessStrategy: BaseValueAccessStrategy())
     }
     
-    init(repository: RepositoryType, accessStrategy: AccessStrategy) {
+    init(repository: RepositoryType, accessStrategy: ValueAccessStrategy) {
         self.repository = repository
         self.cache = AccessedValue(value: [RepositoryType.KeyType: RepositoryType.ObjectType](), accessStrategy: accessStrategy)
     }

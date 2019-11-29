@@ -25,9 +25,9 @@
 		F871D8EE238FF806007593B1 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8ED238FF806007593B1 /* Cache.swift */; };
 		F871D8F123900718007593B1 /* PreloadableCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8F023900718007593B1 /* PreloadableCache.swift */; };
 		F871D8F923900ABC007593B1 /* RepositoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8F823900ABC007593B1 /* RepositoryCache.swift */; };
-		F871D9062390126E007593B1 /* AccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D9052390126E007593B1 /* AccessStrategy.swift */; };
-		F871D909239012D2007593B1 /* BaseAccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D908239012D2007593B1 /* BaseAccessStrategy.swift */; };
-		F8BE102A239014ED005E4500 /* SynchronizedAccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE1029239014ED005E4500 /* SynchronizedAccessStrategy.swift */; };
+		F871D9062390126E007593B1 /* ValueAccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D9052390126E007593B1 /* ValueAccessStrategy.swift */; };
+		F871D909239012D2007593B1 /* BaseValueAccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D908239012D2007593B1 /* BaseValueAccessStrategy.swift */; };
+		F8BE102A239014ED005E4500 /* SynchronizedValueAccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE1029239014ED005E4500 /* SynchronizedValueAccessStrategy.swift */; };
 		F8BE102C2391135F005E4500 /* AccessedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE102B2391135F005E4500 /* AccessedValue.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,9 +73,9 @@
 		F871D8ED238FF806007593B1 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		F871D8F023900718007593B1 /* PreloadableCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadableCache.swift; sourceTree = "<group>"; };
 		F871D8F823900ABC007593B1 /* RepositoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCache.swift; sourceTree = "<group>"; };
-		F871D9052390126E007593B1 /* AccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessStrategy.swift; sourceTree = "<group>"; };
-		F871D908239012D2007593B1 /* BaseAccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAccessStrategy.swift; sourceTree = "<group>"; };
-		F8BE1029239014ED005E4500 /* SynchronizedAccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedAccessStrategy.swift; sourceTree = "<group>"; };
+		F871D9052390126E007593B1 /* ValueAccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueAccessStrategy.swift; sourceTree = "<group>"; };
+		F871D908239012D2007593B1 /* BaseValueAccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseValueAccessStrategy.swift; sourceTree = "<group>"; };
+		F8BE1029239014ED005E4500 /* SynchronizedValueAccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedValueAccessStrategy.swift; sourceTree = "<group>"; };
 		F8BE102B2391135F005E4500 /* AccessedValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessedValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,7 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				F871D907239012BD007593B1 /* Impl */,
-				F871D9052390126E007593B1 /* AccessStrategy.swift */,
+				F871D9052390126E007593B1 /* ValueAccessStrategy.swift */,
 				F8BE102B2391135F005E4500 /* AccessedValue.swift */,
 			);
 			path = AccessStrategy;
@@ -236,8 +236,8 @@
 		F871D907239012BD007593B1 /* Impl */ = {
 			isa = PBXGroup;
 			children = (
-				F871D908239012D2007593B1 /* BaseAccessStrategy.swift */,
-				F8BE1029239014ED005E4500 /* SynchronizedAccessStrategy.swift */,
+				F871D908239012D2007593B1 /* BaseValueAccessStrategy.swift */,
+				F8BE1029239014ED005E4500 /* SynchronizedValueAccessStrategy.swift */,
 			);
 			path = Impl;
 			sourceTree = "<group>";
@@ -373,9 +373,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F871D909239012D2007593B1 /* BaseAccessStrategy.swift in Sources */,
+				F871D909239012D2007593B1 /* BaseValueAccessStrategy.swift in Sources */,
 				F871D8DC238FF02C007593B1 /* CacheableRepository.swift in Sources */,
-				F8BE102A239014ED005E4500 /* SynchronizedAccessStrategy.swift in Sources */,
+				F8BE102A239014ED005E4500 /* SynchronizedValueAccessStrategy.swift in Sources */,
 				F871D8E5238FF12C007593B1 /* UserModel.swift in Sources */,
 				F871D8E9238FF24D007593B1 /* UserDatabase.swift in Sources */,
 				F871D8F923900ABC007593B1 /* RepositoryCache.swift in Sources */,
@@ -384,7 +384,7 @@
 				F871D8EB238FF5EF007593B1 /* UserTest.swift in Sources */,
 				F871D8AA238FEFE5007593B1 /* ViewController.swift in Sources */,
 				F871D8A8238FEFE5007593B1 /* AppDelegate.swift in Sources */,
-				F871D9062390126E007593B1 /* AccessStrategy.swift in Sources */,
+				F871D9062390126E007593B1 /* ValueAccessStrategy.swift in Sources */,
 				F871D8F123900718007593B1 /* PreloadableCache.swift in Sources */,
 				F871D8DA238FF012007593B1 /* Cacheable.swift in Sources */,
 				F871D8E7238FF159007593B1 /* UserRepository.swift in Sources */,

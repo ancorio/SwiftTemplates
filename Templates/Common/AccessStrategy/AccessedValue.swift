@@ -11,9 +11,9 @@ import UIKit
 class AccessedValue<T> {
 
     var value: T
-    var accessStrategy: AccessStrategy
+    var accessStrategy: ValueAccessStrategy
     
-    init(value: T, accessStrategy: AccessStrategy) {
+    init(value: T, accessStrategy: ValueAccessStrategy) {
         self.value = value
         self.accessStrategy = accessStrategy
     }

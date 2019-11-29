@@ -1,5 +1,5 @@
 //
-//  CollectionAccessStrategy.swift
+//  ValueAccessStrategy.swift
 //  Templates
 //
 //  Created by Igor Shavlovsky on 11/28/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AccessStrategy {
+protocol ValueAccessStrategy {
     
     func access<ObjectType, ReturnType>(_: inout ObjectType, block: (inout ObjectType) -> (ReturnType)) -> ReturnType
 }
