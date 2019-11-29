@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct UnsafeInvocationStrategy: InvocationStrategy {
+class UnsafeInvocationStrategy: InvocationStrategy {
     
     func invoke(_ block: @escaping () -> ()) {
         block()

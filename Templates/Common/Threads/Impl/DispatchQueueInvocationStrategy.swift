@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct DispatchQueueInvocationStrategy: InvocationStrategy {
+class DispatchQueueInvocationStrategy: InvocationStrategy {
     
     let queue: DispatchQueue
     let synchronized: Bool

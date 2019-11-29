@@ -14,14 +14,6 @@ class UserModel {
     
 }
 
-extension UserModel: Cacheable {
-    
-    func cacheableKey() -> UUID? {
-        return id
-    }
-    
-}
-
 extension UserModel: CustomStringConvertible {
     var description: String {
         return "User \(String(describing: id)) \(String(describing: email))"

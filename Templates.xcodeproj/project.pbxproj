@@ -15,7 +15,6 @@
 		F871D8B5238FEFE7007593B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F871D8B3238FEFE7007593B1 /* LaunchScreen.storyboard */; };
 		F871D8C0238FEFE7007593B1 /* TemplatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8BF238FEFE7007593B1 /* TemplatesTests.swift */; };
 		F871D8CB238FEFE7007593B1 /* TemplatesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8CA238FEFE7007593B1 /* TemplatesUITests.swift */; };
-		F871D8DA238FF012007593B1 /* Cacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8D9238FF012007593B1 /* Cacheable.swift */; };
 		F871D8DC238FF02C007593B1 /* CacheableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8DB238FF02C007593B1 /* CacheableRepository.swift */; };
 		F871D8E0238FF089007593B1 /* BaseRepositoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8DF238FF089007593B1 /* BaseRepositoryCache.swift */; };
 		F871D8E5238FF12C007593B1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8E4238FF12C007593B1 /* UserModel.swift */; };
@@ -67,7 +66,6 @@
 		F871D8C6238FEFE7007593B1 /* TemplatesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemplatesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F871D8CA238FEFE7007593B1 /* TemplatesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesUITests.swift; sourceTree = "<group>"; };
 		F871D8CC238FEFE7007593B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F871D8D9238FF012007593B1 /* Cacheable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cacheable.swift; sourceTree = "<group>"; };
 		F871D8DB238FF02C007593B1 /* CacheableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheableRepository.swift; sourceTree = "<group>"; };
 		F871D8DF238FF089007593B1 /* BaseRepositoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepositoryCache.swift; sourceTree = "<group>"; };
 		F871D8E4238FF12C007593B1 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 				F8BE102F23911AF2005E4500 /* Threads */,
 				F871D90423901247007593B1 /* ValueAccess */,
 				F871D8EC238FF7F8007593B1 /* Cache */,
-				F871D8E1238FF0C0007593B1 /* Cacheable */,
 				F871D8DD238FF05A007593B1 /* Repository */,
 			);
 			path = Common;
@@ -184,14 +181,6 @@
 				F871D8DB238FF02C007593B1 /* CacheableRepository.swift */,
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		F871D8E1238FF0C0007593B1 /* Cacheable */ = {
-			isa = PBXGroup;
-			children = (
-				F871D8D9238FF012007593B1 /* Cacheable.swift */,
-			);
-			path = Cacheable;
 			sourceTree = "<group>";
 		};
 		F871D8E2238FF103007593B1 /* Examples */ = {
@@ -417,7 +406,6 @@
 				F871D8A8238FEFE5007593B1 /* AppDelegate.swift in Sources */,
 				F871D9062390126E007593B1 /* ValueAccessStrategy.swift in Sources */,
 				F871D8F123900718007593B1 /* PreloadableCache.swift in Sources */,
-				F871D8DA238FF012007593B1 /* Cacheable.swift in Sources */,
 				F871D8E7238FF159007593B1 /* UserRepository.swift in Sources */,
 				F871D8B0238FEFE5007593B1 /* Templates.xcdatamodeld in Sources */,
 				F8BE102C2391135F005E4500 /* AccessedValue.swift in Sources */,

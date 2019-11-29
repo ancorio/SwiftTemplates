@@ -8,6 +8,6 @@
 
 protocol CacheableRepository {
     associatedtype KeyType: Hashable
-    associatedtype ObjectType: Cacheable
+    associatedtype ObjectType
     func loadObjects(_ keys: Set<KeyType>) -> [KeyType : ObjectType]
 }
