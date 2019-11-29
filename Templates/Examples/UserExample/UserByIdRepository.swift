@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserByIdRepository: CacheableRepository {
+class UserByIdRepository: Repository {
     
     func debug(map dbUser: UserDBModel, into model: UserModel) {
         model.id = dbUser.id

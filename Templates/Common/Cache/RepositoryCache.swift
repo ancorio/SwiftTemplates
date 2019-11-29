@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RepositoryCache {
-    associatedtype RepositoryType: CacheableRepository
+    associatedtype RepositoryType: Repository
     var repository: RepositoryType {get}
     // init with repository?
 }

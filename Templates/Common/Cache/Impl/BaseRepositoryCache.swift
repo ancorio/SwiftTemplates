@@ -9,7 +9,7 @@
 // Thing i don't like - BaseRepositoryCache's key and value types are defined by repository, not by BaseRepositoryCache itself
 
 
-class BaseRepositoryCache<RepositoryType: CacheableRepository> {
+class BaseRepositoryCache<RepositoryType: Repository> {
     
     let repository: RepositoryType
 
