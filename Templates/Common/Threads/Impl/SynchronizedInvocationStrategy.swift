@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SynchronizedInvocationStrategy: InvocationStrategy {
+struct SynchronizedInvocationStrategy: InvocationStrategy {
     
     let lock = NSLock()
     

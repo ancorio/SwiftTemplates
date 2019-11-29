@@ -12,3 +12,5 @@ protocol ValueAccessStrategy {
     
     func access<ObjectType, ReturnType>(_: inout ObjectType, block: (inout ObjectType) -> (ReturnType)) -> ReturnType
 }
+
+

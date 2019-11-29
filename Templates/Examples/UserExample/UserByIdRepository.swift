@@ -12,15 +12,15 @@ class UserByIdRepository: Repository {
     
     func loadObjects<C>(_ keys: C) -> [UUID : UserModel] where C : Collection, UUID == C.Element {
         return UserDatabase().getUsers(ids: keys).reduce(into: [UUID : UserModel]()) { (result, dbUser) in
-            let model = UserModel()
-            debug(map: dbUser, into: model)
+            var model = UserModel()
+            debug(map: dbUser, into: &model)
             if let id = model.id { // accessing model property
                 result[id] = model
             }
         }
     }
     
-    func debug(map dbUser: UserDBModel, into model: UserModel) {
+    func debug(map dbUser: UserDBModel, into model: inout UserModel) {
         model.id = dbUser.id
         model.email = dbUser.email
     }

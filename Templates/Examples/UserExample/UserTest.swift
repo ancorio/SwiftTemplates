@@ -14,8 +14,8 @@ class UserTest {
         var repo = BaseRepositoryCache(repository: UserByIdRepository())
         print(repo.getObject(UserDatabase.user1Id))
         print(repo.getObject(UserDatabase.user2Id))
-        print(repo.getObject(UserDatabase.user1Id) === repo.getObject(UserDatabase.user1Id))
-        print(repo.getObject(UserDatabase.user1Id) === repo.getObject(UserDatabase.user2Id))
+        print(repo.getObject(UserDatabase.user1Id) == repo.getObject(UserDatabase.user1Id))
+        print(repo.getObject(UserDatabase.user1Id) == repo.getObject(UserDatabase.user2Id))
         print(repo.getObject(UUID()))
     }
 

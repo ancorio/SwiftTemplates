@@ -8,10 +8,17 @@
 
 import Foundation
 
-class UserModel {
+struct UserModel {
     var id: UUID?
     var email: String?
     
+}
+
+extension UserModel: Equatable {
+    
+    public static func == (lhs: UserModel, rhs: UserModel) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
 extension UserModel: CustomStringConvertible {
