@@ -147,8 +147,8 @@
 		F871D8BE238FEFE7007593B1 /* TemplatesTests */ = {
 			isa = PBXGroup;
 			children = (
+				F8BE103D239158BC005E4500 /* Utils */,
 				F8BE103B23914AF4005E4500 /* AccessedValueTest.swift */,
-				F871D8E8238FF24D007593B1 /* UserDatabase.swift */,
 				F871D8BF238FEFE7007593B1 /* CacheTests.swift */,
 				F871D8C1238FEFE7007593B1 /* Info.plist */,
 			);
@@ -254,6 +254,14 @@
 				F8BE103723911CA2005E4500 /* DispatchQueueInvocationStrategy.swift */,
 			);
 			path = Impl;
+			sourceTree = "<group>";
+		};
+		F8BE103D239158BC005E4500 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F871D8E8238FF24D007593B1 /* UserDatabase.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
