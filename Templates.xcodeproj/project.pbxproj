@@ -29,6 +29,10 @@
 		F871D909239012D2007593B1 /* BaseValueAccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D908239012D2007593B1 /* BaseValueAccessStrategy.swift */; };
 		F8BE102A239014ED005E4500 /* SynchronizedValueAccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE1029239014ED005E4500 /* SynchronizedValueAccessStrategy.swift */; };
 		F8BE102C2391135F005E4500 /* AccessedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE102B2391135F005E4500 /* AccessedValue.swift */; };
+		F8BE103123911B16005E4500 /* InvocationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE103023911B16005E4500 /* InvocationStrategy.swift */; };
+		F8BE103423911BBB005E4500 /* UnsafeInvocationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE103323911BBB005E4500 /* UnsafeInvocationStrategy.swift */; };
+		F8BE103623911C4D005E4500 /* SynchronizedInvocationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE103523911C4D005E4500 /* SynchronizedInvocationStrategy.swift */; };
+		F8BE103823911CA2005E4500 /* DispatchQueueInvocationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE103723911CA2005E4500 /* DispatchQueueInvocationStrategy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,10 @@
 		F871D908239012D2007593B1 /* BaseValueAccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseValueAccessStrategy.swift; sourceTree = "<group>"; };
 		F8BE1029239014ED005E4500 /* SynchronizedValueAccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedValueAccessStrategy.swift; sourceTree = "<group>"; };
 		F8BE102B2391135F005E4500 /* AccessedValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessedValue.swift; sourceTree = "<group>"; };
+		F8BE103023911B16005E4500 /* InvocationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvocationStrategy.swift; sourceTree = "<group>"; };
+		F8BE103323911BBB005E4500 /* UnsafeInvocationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsafeInvocationStrategy.swift; sourceTree = "<group>"; };
+		F8BE103523911C4D005E4500 /* SynchronizedInvocationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedInvocationStrategy.swift; sourceTree = "<group>"; };
+		F8BE103723911CA2005E4500 /* DispatchQueueInvocationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueInvocationStrategy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,7 @@
 		F871D8D8238FEFF2007593B1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F8BE102F23911AF2005E4500 /* Threads */,
 				F871D90423901247007593B1 /* ValueAccess */,
 				F871D8EC238FF7F8007593B1 /* Cache */,
 				F871D8E1238FF0C0007593B1 /* Cacheable */,
@@ -238,6 +247,25 @@
 			children = (
 				F871D908239012D2007593B1 /* BaseValueAccessStrategy.swift */,
 				F8BE1029239014ED005E4500 /* SynchronizedValueAccessStrategy.swift */,
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
+		F8BE102F23911AF2005E4500 /* Threads */ = {
+			isa = PBXGroup;
+			children = (
+				F8BE103223911B97005E4500 /* Impl */,
+				F8BE103023911B16005E4500 /* InvocationStrategy.swift */,
+			);
+			path = Threads;
+			sourceTree = "<group>";
+		};
+		F8BE103223911B97005E4500 /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				F8BE103323911BBB005E4500 /* UnsafeInvocationStrategy.swift */,
+				F8BE103523911C4D005E4500 /* SynchronizedInvocationStrategy.swift */,
+				F8BE103723911CA2005E4500 /* DispatchQueueInvocationStrategy.swift */,
 			);
 			path = Impl;
 			sourceTree = "<group>";
@@ -377,11 +405,14 @@
 				F871D8DC238FF02C007593B1 /* CacheableRepository.swift in Sources */,
 				F8BE102A239014ED005E4500 /* SynchronizedValueAccessStrategy.swift in Sources */,
 				F871D8E5238FF12C007593B1 /* UserModel.swift in Sources */,
+				F8BE103623911C4D005E4500 /* SynchronizedInvocationStrategy.swift in Sources */,
 				F871D8E9238FF24D007593B1 /* UserDatabase.swift in Sources */,
 				F871D8F923900ABC007593B1 /* RepositoryCache.swift in Sources */,
 				F871D8E0238FF089007593B1 /* BaseRepositoryCache.swift in Sources */,
 				F871D8EE238FF806007593B1 /* Cache.swift in Sources */,
+				F8BE103123911B16005E4500 /* InvocationStrategy.swift in Sources */,
 				F871D8EB238FF5EF007593B1 /* UserTest.swift in Sources */,
+				F8BE103423911BBB005E4500 /* UnsafeInvocationStrategy.swift in Sources */,
 				F871D8AA238FEFE5007593B1 /* ViewController.swift in Sources */,
 				F871D8A8238FEFE5007593B1 /* AppDelegate.swift in Sources */,
 				F871D9062390126E007593B1 /* ValueAccessStrategy.swift in Sources */,
@@ -390,6 +421,7 @@
 				F871D8E7238FF159007593B1 /* UserRepository.swift in Sources */,
 				F871D8B0238FEFE5007593B1 /* Templates.xcdatamodeld in Sources */,
 				F8BE102C2391135F005E4500 /* AccessedValue.swift in Sources */,
+				F8BE103823911CA2005E4500 /* DispatchQueueInvocationStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
