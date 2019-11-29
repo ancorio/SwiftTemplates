@@ -31,8 +31,14 @@ class BaseRepositoryCache<RepositoryType: Repository> {
 extension BaseRepositoryCache: RepositoryCache {
     func preloadObjects<C>(_ keys: C) where C : Collection, RepositoryType.KeyType == C.Element {
         cache.access { (dict) in
-            repository.loadObjects(keys).enumerated().forEach { (offset, element) in
-                dict[element.key] = element.value
+            let existingKeys = dict.keys
+            let uncachedKeys = keys.filter({ (key) -> Bool in
+                return existingKeys.contains(key)
+            })
+            if uncachedKeys.count > 0 {
+                repository.loadObjects(uncachedKeys).enumerated().forEach { (offset, element) in
+                    dict[element.key] = element.value
+                }
             }
         }
     }

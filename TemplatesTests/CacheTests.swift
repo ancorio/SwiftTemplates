@@ -23,8 +23,13 @@ fileprivate struct UserModel: Equatable {
 
 fileprivate class UserByIdRepository: Repository {
     
+    var loadRequestsCount = 0
+    var loadResultsCount = 0
+    
     func loadObjects<C>(_ keys: C) -> [UUID : UserModel] where C : Collection, UUID == C.Element {
+        self.loadRequestsCount += keys.count
         return UserDatabase().getUsers(ids: keys).reduce(into: [UUID : UserModel]()) { (result, dbUser) in
+            self.loadResultsCount = self.loadResultsCount + 1
             var model = UserModel()
             model.from(dbUser: dbUser)
             if let id = model.id {
@@ -58,10 +63,17 @@ class CacheTests: XCTestCase {
     }
 
     func testUnexistingUser() {
-        XCTAssert(cache!.getObject(UUID()) == nil)
+        let unexistingRequestsCount = 10
+        for _ in 0..<unexistingRequestsCount {
+            XCTAssert(cache!.getObject(UUID()) == nil)
+        }
+        
         ids.forEach { (uuid) in
             XCTAssert(cache!.getObject(UUID()) != cache!.getObject(uuid))
         }
+        XCTAssert(cache!.repository.loadRequestsCount == unexistingRequestsCount + ids.count * 2)
+        XCTAssert(cache!.repository.loadResultsCount == ids.count)
+        
         
     }
     
@@ -70,6 +82,15 @@ class CacheTests: XCTestCase {
             let testUser = UserModel(id: id, email: email)
             let cachedUser = cache!.getObject(testUser.id!)!
             XCTAssert(cachedUser == testUser)
+        }
+        XCTAssert(cache!.repository.loadRequestsCount == ids.count)
+        XCTAssert(cache!.repository.loadResultsCount == ids.count)
+    }
+    
+    func testProperUserCachedRepeat() {
+        let repeats = 10
+        for _ in 0..<repeats {
+            testProperUserCached()
         }
     }
     
@@ -82,6 +103,8 @@ class CacheTests: XCTestCase {
                 XCTAssert(equal == usersEqual)
             }
         }
+        XCTAssert(cache!.repository.loadRequestsCount == ids.count)
+        XCTAssert(cache!.repository.loadResultsCount == ids.count)
         
     }
 /*
