@@ -161,7 +161,7 @@
 		F871D8D8238FEFF2007593B1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F871D90423901247007593B1 /* AccessStrategy */,
+				F871D90423901247007593B1 /* ValueAccess */,
 				F871D8EC238FF7F8007593B1 /* Cache */,
 				F871D8E1238FF0C0007593B1 /* Cacheable */,
 				F871D8DD238FF05A007593B1 /* Repository */,
@@ -223,14 +223,14 @@
 			path = Impl;
 			sourceTree = "<group>";
 		};
-		F871D90423901247007593B1 /* AccessStrategy */ = {
+		F871D90423901247007593B1 /* ValueAccess */ = {
 			isa = PBXGroup;
 			children = (
 				F871D907239012BD007593B1 /* Impl */,
 				F871D9052390126E007593B1 /* ValueAccessStrategy.swift */,
 				F8BE102B2391135F005E4500 /* AccessedValue.swift */,
 			);
-			path = AccessStrategy;
+			path = ValueAccess;
 			sourceTree = "<group>";
 		};
 		F871D907239012BD007593B1 /* Impl */ = {
