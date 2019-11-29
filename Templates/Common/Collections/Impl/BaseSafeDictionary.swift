@@ -10,31 +10,10 @@ import UIKit
 
 class BaseSafeDictionary<KeyType: Hashable, ValueType> {
     
-    var underlying = [KeyType: ValueType]()
+    let cache: AccessedValue<[KeyType: ValueType]>
     
-    fileprivate func privateAccess<T>(block: (inout [KeyType : ValueType]) -> (T)) -> T {
-        return block(&underlying)
+    init(accessStrategy: AccessStrategy = BaseAccessStrategy()) {
+        cache = AccessedValue<[KeyType: ValueType]>(value: [KeyType: ValueType](), accessStrategy: accessStrategy)
     }
-}
-
-extension BaseSafeDictionary: SafeDictionary {
     
-    func access<T>(block: (inout [KeyType : ValueType]) -> (T)) -> T {
-        return privateAccess(block: block)
-    }
-
-}
-
-
-class BaseSynchronizedSafeDictionary<KeyType: Hashable, ValueType>: BaseSafeDictionary<KeyType, ValueType> {
-    
-    let lock = NSLock()
-    
-    override func privateAccess<T>(block: (inout [KeyType : ValueType]) -> (T)) -> T {
-#warning("implement proper synchronizarion")
-        lock.lock()
-        let result = super.privateAccess(block: block)
-        lock.unlock()
-        return result
-    }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 
-class CollectionAccessStrategy: NSObject {
-
+protocol AccessStrategy {
+    
+    func access<ObjectType, ReturnType>(_: inout ObjectType, block: (inout ObjectType) -> (ReturnType)) -> ReturnType
 }

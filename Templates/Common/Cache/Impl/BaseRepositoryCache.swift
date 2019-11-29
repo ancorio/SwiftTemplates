@@ -8,17 +8,22 @@
 
 // Thing i don't like - BaseRepositoryCache's key and value types are defined by repository, not by BaseRepositoryCache itself
 
+
 class BaseRepositoryCache<RepositoryType: CacheableRepository> {
     
     let repository: RepositoryType
-    
-    #warning("TODO")
 
-    var cache = BaseSafeDictionary<RepositoryType.KeyType, RepositoryType.ObjectType>()
+    private var cache: AccessedValue<[RepositoryType.KeyType: RepositoryType.ObjectType]>
     
-    init(repository: RepositoryType) {
-        self.repository = repository
+    convenience init(repository: RepositoryType) {
+        self.init(repository: repository, accessStrategy: BaseAccessStrategy())
     }
+    
+    init(repository: RepositoryType, accessStrategy: AccessStrategy) {
+        self.repository = repository
+        self.cache = AccessedValue(value: [RepositoryType.KeyType: RepositoryType.ObjectType](), accessStrategy: accessStrategy)
+    }
+    
 
 }
 
