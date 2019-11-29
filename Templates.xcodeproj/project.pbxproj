@@ -25,8 +25,6 @@
 		F871D8EE238FF806007593B1 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8ED238FF806007593B1 /* Cache.swift */; };
 		F871D8F123900718007593B1 /* PreloadableCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8F023900718007593B1 /* PreloadableCache.swift */; };
 		F871D8F923900ABC007593B1 /* RepositoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8F823900ABC007593B1 /* RepositoryCache.swift */; };
-		F871D8FE23900B62007593B1 /* SafeDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D8FD23900B62007593B1 /* SafeDictionary.swift */; };
-		F871D90123900BF7007593B1 /* BaseSafeDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D90023900BF7007593B1 /* BaseSafeDictionary.swift */; };
 		F871D9062390126E007593B1 /* AccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D9052390126E007593B1 /* AccessStrategy.swift */; };
 		F871D909239012D2007593B1 /* BaseAccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871D908239012D2007593B1 /* BaseAccessStrategy.swift */; };
 		F8BE102A239014ED005E4500 /* SynchronizedAccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE1029239014ED005E4500 /* SynchronizedAccessStrategy.swift */; };
@@ -75,8 +73,6 @@
 		F871D8ED238FF806007593B1 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		F871D8F023900718007593B1 /* PreloadableCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadableCache.swift; sourceTree = "<group>"; };
 		F871D8F823900ABC007593B1 /* RepositoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCache.swift; sourceTree = "<group>"; };
-		F871D8FD23900B62007593B1 /* SafeDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeDictionary.swift; sourceTree = "<group>"; };
-		F871D90023900BF7007593B1 /* BaseSafeDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSafeDictionary.swift; sourceTree = "<group>"; };
 		F871D9052390126E007593B1 /* AccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessStrategy.swift; sourceTree = "<group>"; };
 		F871D908239012D2007593B1 /* BaseAccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAccessStrategy.swift; sourceTree = "<group>"; };
 		F8BE1029239014ED005E4500 /* SynchronizedAccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedAccessStrategy.swift; sourceTree = "<group>"; };
@@ -166,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				F871D90423901247007593B1 /* AccessStrategy */,
-				F871D8FC23900B50007593B1 /* Collections */,
 				F871D8EC238FF7F8007593B1 /* Cache */,
 				F871D8E1238FF0C0007593B1 /* Cacheable */,
 				F871D8DD238FF05A007593B1 /* Repository */,
@@ -224,23 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				F871D8DF238FF089007593B1 /* BaseRepositoryCache.swift */,
-			);
-			path = Impl;
-			sourceTree = "<group>";
-		};
-		F871D8FC23900B50007593B1 /* Collections */ = {
-			isa = PBXGroup;
-			children = (
-				F871D8FF23900BE1007593B1 /* Impl */,
-				F871D8FD23900B62007593B1 /* SafeDictionary.swift */,
-			);
-			path = Collections;
-			sourceTree = "<group>";
-		};
-		F871D8FF23900BE1007593B1 /* Impl */ = {
-			isa = PBXGroup;
-			children = (
-				F871D90023900BF7007593B1 /* BaseSafeDictionary.swift */,
 			);
 			path = Impl;
 			sourceTree = "<group>";
@@ -403,13 +381,11 @@
 				F871D8F923900ABC007593B1 /* RepositoryCache.swift in Sources */,
 				F871D8E0238FF089007593B1 /* BaseRepositoryCache.swift in Sources */,
 				F871D8EE238FF806007593B1 /* Cache.swift in Sources */,
-				F871D90123900BF7007593B1 /* BaseSafeDictionary.swift in Sources */,
 				F871D8EB238FF5EF007593B1 /* UserTest.swift in Sources */,
 				F871D8AA238FEFE5007593B1 /* ViewController.swift in Sources */,
 				F871D8A8238FEFE5007593B1 /* AppDelegate.swift in Sources */,
 				F871D9062390126E007593B1 /* AccessStrategy.swift in Sources */,
 				F871D8F123900718007593B1 /* PreloadableCache.swift in Sources */,
-				F871D8FE23900B62007593B1 /* SafeDictionary.swift in Sources */,
 				F871D8DA238FF012007593B1 /* Cacheable.swift in Sources */,
 				F871D8E7238FF159007593B1 /* UserRepository.swift in Sources */,
 				F871D8B0238FEFE5007593B1 /* Templates.xcdatamodeld in Sources */,
