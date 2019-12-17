@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class URLParametersBuilderFactory: NSObject {
+struct URLParametersBuilderFactory {
 
     public static func makeURLParametersBuilder() -> URLParametersBuilder {
         return BaseURLParametersBuilder()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class URLBuilderFactory: NSObject {
+struct URLBuilderFactory {
     static func makeURLBuilder() -> URLBuilder {
         return BaseURLBuilder(scheme: BaseURLScheme.https, domain: "", path: "", parameters: [:], parametersBuilder: URLParametersBuilderFactory.makeURLParametersBuilder())
     }
