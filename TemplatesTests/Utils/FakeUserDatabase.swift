@@ -1,5 +1,5 @@
 //
-//  UserDatabase.swift
+//  FakeUserDatabase.swift
 //  Templates
 //
 //  Created by Igor Shavlovsky on 11/28/19.
@@ -27,7 +27,7 @@ class UserDBModel: DBModel {
 }
 
 
-class UserDatabase {
+class FakeUserDatabase {
     
     static let user1Id = UUID()
     static let user2Id = UUID()
@@ -43,11 +43,11 @@ class UserDatabase {
     
     
     private var debugUsers = [
-        UserDBModel(id: UserDatabase.user1Id, email: user1Email),
-        UserDBModel(id: UserDatabase.user2Id, email: user2Email),
-        UserDBModel(id: UserDatabase.user3Id, email: user3Email),
-        UserDBModel(id: UserDatabase.user4Id, email: user4Email),
-        UserDBModel(id: UserDatabase.user5Id, email: user5Email)
+        UserDBModel(id: user1Id, email: user1Email),
+        UserDBModel(id: user2Id, email: user2Email),
+        UserDBModel(id: user3Id, email: user3Email),
+        UserDBModel(id: user4Id, email: user4Email),
+        UserDBModel(id: user5Id, email: user5Email)
     ]
     
     func getUsers<C: Collection>(ids: C) -> [UserDBModel] where C.Element == UserDBModel.IdType {

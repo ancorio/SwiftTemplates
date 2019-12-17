@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserManager().getUsers { (result) in
+            dump(result)
+        }
     }
 
 

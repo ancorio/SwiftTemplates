@@ -29,11 +29,38 @@ class BaseRepositoryCache<RepositoryType: Repository> {
 
 
 extension BaseRepositoryCache: RepositoryCache {
+    
+    func removeObject(_ key: RepositoryType.KeyType) {
+        cache.access { (dict) in
+            dict.removeValue(forKey: key)
+        }
+    }
+    
+    func removeObjects<C>(_ keys: C) where C : Collection, RepositoryType.KeyType == C.Element {
+        cache.access { (dict) in
+            keys.forEach { (key) in
+                dict.removeValue(forKey: key)
+            }
+        }
+    }
+    
+    func removeAllObjects() {
+        cache.access { (dict) in
+            dict.removeAll()
+        }
+    }
+    
+    func containsObject(_ key: RepositoryType.KeyType) -> Bool {
+        return cache.access { (dict) -> Bool in
+            return dict.keys.contains(key)
+        }
+    }
+    
     func preloadObjects<C>(_ keys: C) where C : Collection, RepositoryType.KeyType == C.Element {
         cache.access { (dict) in
             let existingKeys = dict.keys
             let uncachedKeys = keys.filter({ (key) -> Bool in
-                return existingKeys.contains(key)
+                return !existingKeys.contains(key)
             })
             if uncachedKeys.count > 0 {
                 repository.loadObjects(uncachedKeys).enumerated().forEach { (offset, element) in

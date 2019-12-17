@@ -17,9 +17,15 @@ struct AccessedValue<T> {
         self.value = value
         self.accessStrategy = accessStrategy
     }
-
+    
+    @discardableResult
     mutating func access<ReturnType>(_ block: (inout T) -> (ReturnType)) -> ReturnType {
         return accessStrategy.access(&value, block: block)
     }
     
+    func get() -> T {
+        return value
+    }
+    
 }
+

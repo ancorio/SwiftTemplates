@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol RepositoryCache: PreloadableCache {
+protocol RepositoryCache: PreloadableCache, PurgeableCache {
     associatedtype RepositoryType: Repository
     var repository: RepositoryType {get}
     // init with repository?

@@ -1,0 +1,28 @@
+{
+    "code" : 0,
+    "message" : "success",
+    "data" : {
+        
+    }
+}
+
+
+User response:
+{
+    "code" : 0,
+    "message" : "success",
+    "data" : {
+        "users" : [
+            {
+                "id" : "F3C1B92F-AA8D-4CB8-AB98-3CD54E3B5467",
+                "name" : "Frank Sinatra",
+                "email" : "frank.sinatra@gmail.com"
+            },
+            {
+                "id" : "DC7E3614-65B2-4E75-9CE9-084457DBDD62",
+                "name" : "John Kennedy",
+                "email" : "jfk@gmail.com"
+            }
+        ]
+    }
+}

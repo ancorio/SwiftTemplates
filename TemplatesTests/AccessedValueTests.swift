@@ -50,5 +50,44 @@ class AccessedValueTest: XCTestCase {
     func testStrings() {
         doTest(originalValue: "Hello", otherValues: ["1", "", "Check", "Text", ""])
     }
+    
+    func asyncAccessTest(count: Int, accessStrategy: ValueAccessStrategy, expectMatch: Bool) {
+        var value = AccessedValue<Int>(value: 0, accessStrategy: accessStrategy)
+        var sum: Int = 0
+        var rands = [Int]()
+        for _ in (1...count) {
+            let rand = Int.random(in: Range<Int>(uncheckedBounds: (0, 100)))
+            rands.append(rand)
+            sum += rand
+        }
+        var remaining = count
+        let queue = DispatchQueue(label: "Test", qos: .background, attributes: [], autoreleaseFrequency: .workItem, target: nil)
+        rands.forEach { (r) in
+            DispatchQueue.global(qos: .background).async {
+                value.access { (v) -> () in
+                    v = v + r
+                }
+                queue.async {
+                    remaining = remaining - 1
+                }
+            }
+        }
+        while remaining > 0 {
+            Thread.sleep(forTimeInterval: 0.1)
+        }
+
+        let vSum = value.get()
+        XCTAssert((sum == vSum) == expectMatch)
+    }
+    
+    func testAsync() {
+        asyncAccessTest(count: 200000, accessStrategy: SynchronizedValueAccessStrategy(), expectMatch: true)
+        
+    }
+ 
+    func testAsyncFail() {
+        asyncAccessTest(count: 200000, accessStrategy: BaseValueAccessStrategy(), expectMatch: false)
+    }
 
 }
+

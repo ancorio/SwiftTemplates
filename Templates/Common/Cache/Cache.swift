@@ -9,6 +9,8 @@
 protocol Cache {
     associatedtype KeyType: Hashable
     associatedtype ObjectType
+    
+    func containsObject(_ key: KeyType) -> Bool
     func getObject(_ key: KeyType) -> ObjectType?
 }
 
